@@ -1,0 +1,12 @@
+.bundle
+index
+log/*.log
+log/*.pid
+tmp/
+.DS_Store
+*Thumbs.db
+.idea
+.bundle
+vendor/ruby
+vendor/bundle
+vendor/cache
