@@ -1,6 +1,6 @@
-= Augmentations
+# Augmentations
 
-A tiny framework for helping solve common problem when using caches_action in rails apps: Still needing to show custom info for the current user, order, etc.
+A tiny framework for helping solve the common problem when using caches_action in rails apps: Still needing to show custom info for the current user, order, etc.
 
 First it loads the JSON of the current session info, by default from `/session/info.json`. All the augmentations are then called with this information.
 
