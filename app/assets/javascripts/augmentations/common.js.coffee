@@ -1,5 +1,7 @@
-Augmentations.Default = {}
-class Augmentations.Default.LoggedInStatus extends Augmentations.Base
+Augmentations.Common = {}
+
+# Show .loggedIn or .loggedOut, both previously hidden
+class Augmentations.Common.LoggedInStatus extends Augmentations.Base
   test: =>
     @session.user_signed_in
   augment: =>
@@ -9,7 +11,8 @@ class Augmentations.Default.LoggedInStatus extends Augmentations.Base
   failed: =>
     @root().find('.loggedOut').show()
 
-class Augmentations.Default.OrderStatus extends Augmentations.Base
+# Hides .default text and shows previously hidden .hasOrder
+class Augmentations.Common.OrderStatus extends Augmentations.Base
   test: =>
     @session.has_order
   augment: =>
@@ -17,17 +20,18 @@ class Augmentations.Default.OrderStatus extends Augmentations.Base
       .find('.default').hide().end()
       .find('.hasOrder').show()
 
-class Augmentations.Default.AdminMenu extends Augmentations.Base
+# Append an admin dropdown to the main menu
+class Augmentations.Common.AdminMenu extends Augmentations.Base
   url: =>
     '/admin/augmentations/menu.html'
   test: =>
     @session.is_admin
   augment: =>
     $.get(@url()).success (data)=>
-      $(data).prependTo(@root()).dropdownTab()
+      $(data).prependTo(@root())
 
-# Used on a show action to add admin augmentations
-class Augmentations.Default.AdminShow extends Augmentations.Base
+# Subclass and use on a show action to add admin augmentations
+class Augmentations.Common.AdminShow extends Augmentations.Base
   getId: =>
     @_id = $('html').attr('data-id')
   test: =>
