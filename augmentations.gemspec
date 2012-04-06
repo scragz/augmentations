@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.authors     = ["scragz"]
   s.email       = ["hi@scragz.com"]
   s.homepage    = "http://scragz.com/"
-  s.summary     = "Serve the same cached page to everyone and augment it for special cases after the fact."
-  s.description = "Serve the same cached page to everyone and augment it for special cases after the fact."
+  s.summary     = "Augmentations micro JS framework for Rails 3"
+  s.description = "Use Rails caches_action to serve the same cached page to everyone and augment special cases with JS after it's loaded."
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
