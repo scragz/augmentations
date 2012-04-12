@@ -28,7 +28,7 @@ class Augmentations.Common.AdminMenu extends Augmentations.Base
     @session.is_admin
   augment: =>
     $.get(@url()).success (data)=>
-      $(data).prependTo(@root())
+      $(data).appendTo(@root())
 
 # Subclass and use on a show action to add admin augmentations
 class Augmentations.Common.AdminShow extends Augmentations.Base
